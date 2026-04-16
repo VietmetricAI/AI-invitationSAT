@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thư Mời Hội Thảo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#EAECE8;color:#2C2C2C;font-size:15px;line-height:1.7}
+    .wrap{max-width:680px;margin:32px auto;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.10);border-radius:4px;overflow:hidden}
+
+    /* HEADER */
+    .hd{padding:28px 40px 32px;background:#fff}
+    .logo-row{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+    .logo-box{width:40px;height:40px;background:#C8392B;color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;border-radius:5px;line-height:1.2;text-align:center}
+    .logo-name{font-weight:700;font-size:13.5px;color:#2C2C2C;line-height:1.4}
+    .logo-sub{font-size:11px;color:#888;font-weight:400}
+    .date-tag{display:inline-block;background:#1B6B35;color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:16px}
+    .main-title{font-size:28px;font-weight:800;line-height:1.25;color:#1A1A1A;margin-bottom:20px}
+    .main-title span{color:#C8392B}
+    .ev-banner{background:#1B6B35;color:#fff;padding:11px 20px;border-radius:6px;display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+    .ev-code{background:rgba(255,255,255,.2);color:#fff;font-weight:800;font-size:11px;padding:3px 10px;border-radius:4px;letter-spacing:.5px;white-space:nowrap}
+    .ev-divider{width:1px;height:18px;background:rgba(255,255,255,.3);flex-shrink:0}
+    .ev-desc{font-size:13px;opacity:.9}
+    .hd-sub{font-size:13.5px;color:#666;margin-bottom:22px;line-height:1.65}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px}
+    .info-item{display:flex;align-items:flex-start;gap:10px}
+    .info-icon{width:30px;height:30px;background:#EEF5EE;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;margin-top:2px}
+    .info-label{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#AAA;margin-bottom:2px}
+    .info-val{font-size:13px;font-weight:600;line-height:1.4}
+
+    /* SECTIONS */
+    .sec{padding:30px 40px;border-top:1px solid #EDEAE5}
+    .sec-light{background:#F7F9F7}
+    .num-hd{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .num-circle{width:36px;height:36px;background:#1B6B35;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+    .num-title{font-size:15px;font-weight:800;color:#1A1A1A;text-transform:uppercase;letter-spacing:.5px}
+
+    /* LETTER */
+    .letter-box{border-left:3px solid #C9A44C;padding:20px 24px;background:#FFFDF8;border-radius:0 6px 6px 0}
+    .letter-box p{font-size:14px;line-height:1.8;color:#333;margin-bottom:14px}
+    .letter-box p:last-child{margin-bottom:0}
+
+    /* HIGHLIGHT BOX */
+    .hl-box{background:#F0F7F1;border:1.5px solid #A8D5B5;border-radius:8px;overflow:hidden;margin-bottom:16px}
+    .hl-box-hd{background:#1B6B35;padding:11px 20px;display:flex;align-items:center;gap:12px}
+    .hl-box-badge{background:rgba(255,255,255,.2);color:#fff;font-weight:800;font-size:11px;padding:3px 8px;border-radius:4px;letter-spacing:.5px}
+    .hl-box-title{color:#fff;font-weight:700;font-size:14px}
+    .hl-box-body{padding:20px}
+    .hl-box-desc{font-size:13.5px;font-weight:600;color:#555;margin-bottom:16px}
+    .hl-box-note{border-left:3px solid #C9A44C;padding:10px 14px;font-size:13px;color:#555;background:#FFFCF0;border-radius:0 4px 4px 0;line-height:1.6}
+
+    /* OBJECTIVES GRID */
+    .obj-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+    .obj-card{background:#EEF5EE;border-radius:8px;padding:14px 12px;border-left:3px solid #1B6B35}
+    .obj-num{font-size:10px;font-weight:700;color:#1B6B35;letter-spacing:.6px;text-transform:uppercase;margin-bottom:4px}
+    .obj-title{font-size:13.5px;font-weight:700;color:#1A1A1A;margin-bottom:6px}
+    .obj-desc{font-size:12px;color:#666;line-height:1.5}
+
+    /* BODY TEXT */
+    .bp{font-size:13.5px;color:#444;line-height:1.75;margin-bottom:16px}
+    .bp:last-child{margin-bottom:0}
+    .hl{color:#1A1A1A;font-weight:700}
+    .red{color:#C8392B;font-weight:700}
+    .green{color:#1B6B35;font-weight:700}
+
+    /* STRATEGY GRID */
+    .strat-box{border:1.5px solid #1B6B35;border-radius:8px;overflow:hidden;margin-bottom:16px}
+    .strat-hd{background:#1B6B35;color:#fff;padding:10px 18px;font-size:12.5px;font-weight:700;letter-spacing:.5px}
+    .strat-grid{display:grid;grid-template-columns:1fr 1fr}
+    .strat-cell{padding:16px 18px;border-right:1px solid #EEF5EE;border-bottom:1px solid #EEF5EE}
+    .strat-cell:nth-child(even){border-right:none}
+    .strat-cell:nth-last-child(-n+2){border-bottom:none}
+    .sc-label{font-size:10.5px;font-weight:700;color:#1B6B35;letter-spacing:.5px;margin-bottom:4px}
+    .sc-title{font-size:13px;font-weight:700;color:#2C2C2C;margin-bottom:6px}
+    .sc-desc{font-size:12px;color:#666;line-height:1.55}
+
+    /* POLICY GRID */
+    .policy-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .policy-card{background:#F5F3F0;border-radius:8px;padding:15px}
+    .pc-label{font-size:10.5px;font-weight:700;color:#C8392B;margin-bottom:4px;letter-spacing:.5px}
+    .pc-title{font-size:13px;font-weight:700;color:#2C2C2C;margin-bottom:6px}
+    .pc-desc{font-size:12px;color:#666;line-height:1.5}
+
+    /* STATS */
+    .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+    .stat-card{border-radius:8px;padding:16px;text-align:center}
+    .stat-card.green-c{background:#EEF5EE}
+    .stat-card.red-c{background:#FDE8E6}
+    .stat-card.gold-c{background:#FFF8E8}
+    .stat-num{font-size:26px;font-weight:800;line-height:1;margin-bottom:4px}
+    .stat-card.green-c .stat-num{color:#1B6B35}
+    .stat-card.red-c .stat-num{color:#C8392B}
+    .stat-card.gold-c .stat-num{color:#B8862A}
+    .stat-lbl{font-size:10.5px;font-weight:700;color:#999;letter-spacing:.5px;margin-bottom:6px}
+    .stat-desc{font-size:11.5px;color:#666;line-height:1.45}
+
+    /* CRITERIA */
+    .crit-box{background:#F7F9F7;border-radius:8px;padding:18px 20px}
+    .crit-sub{font-size:11px;font-weight:700;color:#1B6B35;letter-spacing:.7px;text-transform:uppercase;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #D5E8D8}
+    .crit-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+    .crit-item:last-child{margin-bottom:0}
+    .crit-num{width:26px;height:26px;background:#1B6B35;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0;margin-top:1px}
+    .crit-text{font-size:13.5px;color:#333;line-height:1.65}
+
+    /* SCHEDULE */
+    .sched-item{border:1px solid #D5E8D8;border-radius:8px;margin-bottom:8px;overflow:hidden;cursor:pointer;transition:box-shadow .15s}
+    .sched-item:hover{box-shadow:0 2px 8px rgba(27,107,53,.12)}
+    .sched-item.open{border-color:#1B6B35}
+    .sched-hd{display:flex;align-items:center;padding:13px 18px;gap:14px;background:#fff;user-select:none}
+    .sched-item.open .sched-hd{background:#F0F7F1}
+    .sched-time{font-size:12.5px;font-weight:700;color:#1B6B35;white-space:nowrap;min-width:90px}
+    .sched-title{font-size:13.5px;font-weight:600;color:#2C2C2C;flex:1}
+    .sched-meta{font-size:12px;color:#999;white-space:nowrap;display:flex;align-items:center;gap:6px}
+    .sched-arrow{font-size:11px;color:#1B6B35;display:inline-block;transition:transform .25s ease}
+    .sched-item.open .sched-arrow{transform:rotate(180deg)}
+    .sched-body{display:none;padding:14px 18px 16px;border-top:1px solid #EEF5EE;font-size:13.5px;color:#555;line-height:1.7;background:#FAFCFA;animation:fadeDown .2s ease}
+    @keyframes fadeDown{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+    .sched-item.open .sched-body{display:block}
+    .sched-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+    .tag{background:#EEF5EE;color:#1B6B35;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:.3px}
+    .tag.red{background:#FDE8E6;color:#C8392B;font-weight:600}
+
+    /* SPEAKERS */
+    .speaker-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .speaker-card{background:#F7F9F7;border-radius:8px;padding:16px;display:flex;gap:12px;align-items:flex-start}
+    .speaker-avatar{width:44px;height:44px;background:#1B6B35;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;flex-shrink:0}
+    .speaker-name{font-size:13.5px;font-weight:700;color:#1A1A1A;margin-bottom:3px}
+    .speaker-role{font-size:12px;color:#666;line-height:1.4}
+    .speaker-org{font-size:11px;color:#1B6B35;font-weight:600;margin-top:4px}
+
+    /* COMMIT */
+    .commit-box{border:1px solid #D5E8D8;border-radius:8px;padding:20px 24px;background:#fff}
+    .commit-label{font-size:11px;font-weight:700;color:#1B6B35;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+    .commit-item{display:flex;gap:12px;margin-bottom:13px;font-size:13.5px;color:#333;line-height:1.65}
+    .commit-item:last-child{margin-bottom:0}
+    .commit-dot{width:8px;height:8px;background:#1B6B35;border-radius:50%;flex-shrink:0;margin-top:7px}
+
+    /* CTA */
+    .cta-sec{background:#1B6B35;padding:44px 40px;text-align:center}
+    .cta-title{color:#fff;font-size:22px;font-weight:800;margin-bottom:8px;line-height:1.3}
+    .cta-badge{color:#F5C842;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:18px}
+    .cta-desc{color:rgba(255,255,255,.84);font-size:14px;margin-bottom:28px;line-height:1.65}
+    .cta-btn{display:inline-block;background:#C8392B;color:#fff;font-weight:800;font-size:13.5px;letter-spacing:1.5px;text-transform:uppercase;padding:16px 50px;border-radius:6px;text-decoration:none;cursor:pointer;border:none;font-family:inherit;transition:background .2s,transform .1s}
+    .cta-btn:hover{background:#A82E22;transform:translateY(-1px)}
+    .cta-info{color:rgba(255,255,255,.6);font-size:12px;margin-top:22px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+
+    /* SIGNATURE */
+    .sig{padding:28px 40px;background:#fff;border-top:1px solid #EDEAE5}
+    .sig-name{font-size:20px;font-weight:800;color:#1B6B35;margin-bottom:4px}
+    .sig-role{font-size:13.5px;color:#555;margin-bottom:3px}
+    .sig-contact{font-size:13px;color:#999}
+
+    /* FOOTER */
+    .footer{background:#F2F5F2;border-top:1px solid #D5E8D8;padding:14px 40px;text-align:center;font-size:11px;color:#AAA;letter-spacing:.6px;text-transform:uppercase}
+
+    /* SEAL */
+    .seal-row{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+    .seal{width:60px;height:60px;border:2px solid #C8392B;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .seal-inner{text-align:center}
+    .seal-star{color:#C8392B;font-size:18px;line-height:1}
+    .seal-text{font-size:8px;font-weight:700;color:#C8392B;letter-spacing:.5px;line-height:1.2;text-transform:uppercase}
+
+    @media(max-width:620px){
+      .wrap{margin:0;border-radius:0}
+      .hd,.sec,.sig,.cta-sec,.footer{padding-left:20px;padding-right:20px}
+      .info-grid,.obj-grid,.strat-grid,.policy-grid,.stats-row,.speaker-grid{grid-template-columns:1fr}
+      .cta-info{flex-direction:column;gap:6px}
+      .main-title{font-size:22px}
+      .sched-meta{display:none}
+      .ev-divider{display:none}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+/* ================================================================
+   ✏️  TÙY CHỈNH NỘI DUNG — Chỉ cần sửa phần DATA bên dưới
+   Không cần chạm vào phần còn lại của file.
+   ================================================================ */
+
+const DATA = {
+
+  /* ── Thông tin tổ chức ──────────────────────────────────────── */
+  org: {
+    logoLine1: "BỘ TT",             // dòng 1 trong ô logo
+    logoLine2: "&TT",               // dòng 2 trong ô logo
+    name:    "Bộ Khoa học và Công nghệ",
+    sub:     "Cục ICT",
+    website: "mic.gov.vn",
+    phone:   "024 3943 6684",
+    address: "18 Nguyễn Du, Hoàn Kiếm, Hà Nội · mic.gov.vn"
+  },
+
+  /* ── Thông tin sự kiện ──────────────────────────────────────── */
+  event: {
+    dateTag:     "Thứ Bảy · Tháng 5/2026",
+    mainTitle:   "Hội thảo Ứng dụng Trí tuệ Nhân tạo trong Cơ quan Nhà nước",
+    eventCode:   "AI-GOV 2026",
+    eventName:   "AI-GOV 2026",
+    eventTagline:"Hội thảo quốc gia về chuyển đổi số và ứng dụng AI trong hành chính công",
+    subtitle:    "Kính gửi Quý Anh/Chị — lãnh đạo, chuyên gia và cán bộ phụ trách chuyển đổi số tại các cơ quan nhà nước",
+    meetingDate: "Thứ Sáu, 22/5/2026",
+    time:        "08:00 – 17:00 · Tiệc chiêu đãi buổi tối",
+    location:    "Trung tâm Hội nghị Quốc gia · 57 Phạm Hùng, Nam Từ Liêm, Hà Nội"
+  },
+
+  /* ── Thư mời ────────────────────────────────────────────────── */
+  letter: {
+    greeting:   "Kính gửi Quý Anh/Chị,",
+    paragraphs: [
+      "Trong bối cảnh Chính phủ Việt Nam đang đẩy mạnh Chương trình chuyển đổi số quốc gia và xây dựng Chính phủ điện tử hướng tới Chính phủ số, trí tuệ nhân tạo (AI) đã trở thành công cụ chiến lược không thể thiếu trong hiện đại hóa nền hành chính công.",
+      "Bộ Thông tin và Truyền thông trân trọng kính mời Quý Anh/Chị tham dự <strong>Hội thảo Ứng dụng Trí tuệ Nhân tạo trong Cơ quan Nhà nước — AI-GOV 2026</strong> — diễn đàn quốc gia kết nối lãnh đạo, chuyên gia và nhà quản lý trong hành trình chuyển đổi số khu vực công.",
+      "Hội thảo là cơ hội để chia sẻ kinh nghiệm thực tiễn, thảo luận về chính sách và khám phá các giải pháp AI đang được triển khai hiệu quả tại các bộ, ngành và địa phương trên cả nước."
+    ]
+  },
+
+  /* ── Hộp giới thiệu sự kiện ────────────────────────────────── */
+  network: {
+    code:  "AI-GOV",
+    title: "AI-GOV 2026 — Hội thảo Quốc gia về AI trong Hành chính Công",
+    desc:  "Diễn đàn kết nối lãnh đạo cơ quan nhà nước, chuyên gia công nghệ và nhà hoạch định chính sách trong hành trình ứng dụng AI vào quản trị công",
+    tiers: [
+      { label: "Phiên 1 · Sáng",    name: "Chính sách & Chiến lược",   desc: "Định hướng quốc gia về AI trong khu vực công — khung pháp lý, lộ trình triển khai và các chỉ tiêu đến 2030" },
+      { label: "Phiên 2 · Chiều",   name: "Thực tiễn & Mô hình",       desc: "Chia sẻ kinh nghiệm triển khai AI tại bộ, ngành, địa phương — bài học thành công và thách thức thực tế" },
+      { label: "Phiên 3 · Cuối ngày", name: "Hợp tác & Triển khai",    desc: "Kết nối cơ quan nhà nước với đối tác công nghệ — ký kết hợp tác, trình diễn giải pháp và workshop thực hành" }
+    ],
+    note: "<strong>AI-GOV 2026 là sự kiện bắt buộc tham chiếu</strong> cho lãnh đạo và cán bộ phụ trách chuyển đổi số. Đây là diễn đàn chính thức duy nhất trong năm 2026 quy tụ toàn bộ hệ sinh thái AI khu vực công Việt Nam."
+  },
+
+  /* ── Các phần nội dung ──────────────────────────────────────── */
+  sections: [
+    {
+      num: 1, light: false,
+      title: "Bối cảnh và sự cần thiết",
+      blocks: [
+        { type: "p", text: "Nghị quyết 36-NQ/TW về Chiến lược phát triển bền vững kinh tế biển và Quyết định 749/QĐ-TTg về Chương trình chuyển đổi số quốc gia đặt ra mục tiêu rõ ràng: <span class=\"hl\">100% dịch vụ công trực tuyến mức độ 4 vào năm 2025, 80% hoạt động của cơ quan nhà nước được số hóa vào 2030</span>. AI là công cụ then chốt để hiện thực hóa mục tiêu này." },
+        {
+          type: "strategy",
+          header: "Mục tiêu Chính phủ số 2026–2030 · Theo Quyết định 942/QĐ-TTg",
+          cells: [
+            { label: "Mục tiêu 1", title: "Dịch vụ công thông minh",      desc: "100% dịch vụ công được cá nhân hóa, tự động hóa xử lý — AI tư vấn và hướng dẫn người dân 24/7" },
+            { label: "Mục tiêu 2", title: "Hành chính không giấy tờ",     desc: "Toàn bộ hồ sơ, văn bản hành chính được số hóa và xử lý tự động bằng AI vào năm 2028" },
+            { label: "Mục tiêu 3", title: "Ra quyết định dựa trên dữ liệu", desc: "80% quyết định hành chính có sự hỗ trợ phân tích của AI và hệ thống dữ liệu lớn" },
+            { label: "Mục tiêu 4", title: "An toàn thông tin & Minh bạch", desc: "AI giám sát, phát hiện và cảnh báo rủi ro an ninh mạng trong hệ thống hành chính nhà nước" }
+          ]
+        },
+        { type: "p", text: "Tuy nhiên, thực tế triển khai tại nhiều cơ quan còn chậm do thiếu kiến thức thực tiễn, thiếu mô hình tham chiếu và thiếu sự kết nối giữa nhà quản lý với chuyên gia công nghệ. <span class=\"hl\">AI-GOV 2026 được tổ chức để giải quyết đúng khoảng trống này.</span>" }
+      ]
+    },
+    {
+      num: 2, light: true,
+      title: "Khung pháp lý và chính sách AI quốc gia",
+      blocks: [
+        { type: "p", text: "Hệ thống văn bản pháp lý về AI và chuyển đổi số đang được hoàn thiện nhanh chóng, tạo hành lang thuận lợi cho triển khai trong khu vực công:" },
+        {
+          type: "policy",
+          cards: [
+            { label: "QĐ 127/QĐ-TTg", title: "Chiến lược quốc gia về AI đến 2030",     desc: "Định hướng phát triển và ứng dụng AI toàn diện — khu vực công là lĩnh vực ưu tiên triển khai." },
+            { label: "NĐ 13/2023/NĐ-CP", title: "Bảo vệ dữ liệu cá nhân",             desc: "Khung pháp lý bảo vệ quyền riêng tư — nền tảng pháp lý cho AI xử lý dữ liệu công dân." },
+            { label: "QĐ 942/QĐ-TTg", title: "Chiến lược phát triển Chính phủ điện tử", desc: "Lộ trình cụ thể đến 2025 và tầm nhìn đến 2030 cho chính phủ số toàn diện." },
+            { label: "TT 13/2022/TT-BTTTT", title: "Tiêu chuẩn an toàn thông tin AI", desc: "Quy định kỹ thuật về triển khai hệ thống AI an toàn trong cơ quan nhà nước." }
+          ]
+        }
+      ]
+    },
+    {
+      num: 3, light: false,
+      title: "Tại sao cần tham dự AI-GOV 2026",
+      blocks: [
+        { type: "p", text: "Khảo sát của Bộ TT&TT năm 2025 với 500 cơ quan nhà nước cho thấy khoảng cách lớn giữa mục tiêu và thực tế triển khai AI:" },
+        {
+          type: "stats",
+          items: [
+            { num: "23%", label: "Đã triển khai AI",   color: "green-c", desc: "Tỷ lệ cơ quan nhà nước đã ứng dụng ít nhất 1 giải pháp AI vào hoạt động" },
+            { num: "61%", label: "Muốn triển khai",    color: "gold-c",  desc: "Đang có kế hoạch nhưng chưa biết bắt đầu từ đâu và chọn giải pháp nào" },
+            { num: "16%", label: "Chưa có kế hoạch",   color: "red-c",   desc: "Chưa có nhận thức đầy đủ hoặc thiếu nguồn lực để tiếp cận AI" }
+          ]
+        },
+        { type: "p", text: "AI-GOV 2026 cung cấp <span class=\"hl\">bản đồ lộ trình thực tiễn</span> giúp nhóm 61% có thể bắt đầu triển khai ngay sau hội thảo — với mô hình, công cụ và đối tác phù hợp." }
+      ]
+    },
+    {
+      num: 4, light: true,
+      title: "Đối tượng tham dự",
+      blocks: [
+        {
+          type: "criteria",
+          subtitle: "Hội thảo dành cho lãnh đạo và chuyên gia trong hệ thống cơ quan nhà nước",
+          items: [
+            "<strong>Lãnh đạo cấp Vụ, Cục, Sở, Phòng</strong> phụ trách lĩnh vực công nghệ thông tin, chuyển đổi số và cải cách hành chính",
+            "<strong>Cán bộ chuyên trách CNTT & chuyển đổi số</strong> tại các bộ, ngành trung ương và UBND tỉnh, thành phố",
+            "<strong>Chuyên gia hoạch định chính sách</strong> trong lĩnh vực quản trị số, dữ liệu mở và AI khu vực công",
+            "<strong>Đại diện doanh nghiệp công nghệ</strong> cung cấp giải pháp AI cho khu vực công — tham dự phiên kết nối và trình diễn giải pháp"
+          ]
+        }
+      ]
+    }
+  ],
+
+  /* ── Lịch trình (Phần 5) ────────────────────────────────────── */
+  schedule: {
+    num: 5, light: false,
+    title: "Chương trình Hội thảo · Thứ Sáu 22/5/2026",
+    intro: "Chương trình một ngày toàn phần — 3 phiên chuyên đề, tham quan thực tế và tiệc chiêu đãi:",
+    items: [
+      { time: "07:30–08:00", title: "Đón tiếp đại biểu & Đăng ký tham dự", meta: "Sảnh chính", body: "Ban tổ chức đón tiếp và hướng dẫn đại biểu. Phát tài liệu hội thảo, kỷ yếu và quà tặng. Chụp ảnh lưu niệm tại khu vực triển lãm giải pháp AI.", tags: [], open: false },
+      {
+        time: "08:00–08:30", title: "Lễ khai mạc & Phát biểu chào mừng", meta: "Hội trường lớn", open: true,
+        body: "Thứ trưởng Bộ TT&TT phát biểu khai mạc. Đại diện Văn phòng Chính phủ trình bày thông điệp về Chương trình chuyển đổi số quốc gia. Giới thiệu mục tiêu và chương trình hội thảo.",
+        tags: ["KHAI MẠC CHÍNH THỨC", "THỨ TRƯỞNG BỘ TT&TT"]
+      },
+      { time: "08:30–10:30", title: "Phiên 1: Chính sách & Chiến lược AI quốc gia", meta: "Toàn thể", body: "Các chuyên gia hàng đầu trình bày về Chiến lược AI quốc gia đến 2030, khung pháp lý và lộ trình triển khai AI trong khu vực công. Thảo luận bàn tròn về rào cản và giải pháp.", tags: ["CHÍNH SÁCH", "CHIẾN LƯỢC 2030", "QĐ 127"], open: false },
+      { time: "10:30–10:45", title: "Giải lao & Tham quan Triển lãm Giải pháp AI", meta: "Khu triển lãm", body: "Nghỉ giải lao và tham quan 20+ gian hàng trình diễn giải pháp AI ứng dụng trong hành chính công — chatbot, xử lý hồ sơ tự động, phân tích dữ liệu, nhận diện khuôn mặt...", tags: [], open: false },
+      { time: "10:45–12:15", title: "Phiên 2: Mô hình thực tiễn từ Bộ ngành & Địa phương", meta: "Song song 3 phòng", body: "Ba phòng thảo luận song song: (A) AI trong dịch vụ công trực tuyến · (B) AI trong quản lý đô thị và giao thông · (C) AI trong y tế và giáo dục công lập. Đại biểu chọn phòng theo lĩnh vực.", tags: ["CASE STUDY", "BỘ NGÀNH", "ĐỊA PHƯƠNG"], open: false },
+      { time: "12:15–13:30", title: "Tiệc trưa & Kết nối networking", meta: "Nhà hàng Tầng 2", body: "Tiệc trưa do Ban tổ chức chiêu đãi. Cơ hội gặp gỡ và kết nối với lãnh đạo các bộ, ngành, địa phương và đại diện doanh nghiệp công nghệ.", tags: [], open: false },
+      { time: "13:30–16:00", title: "Phiên 3: Workshop thực hành & Ký kết hợp tác", meta: "Xưởng thực hành", body: "Workshop hands-on: triển khai thử nghiệm AI trên dữ liệu thực của cơ quan. Lễ ký kết biên bản ghi nhớ hợp tác giữa cơ quan nhà nước và đối tác công nghệ.", tags: ["WORKSHOP", "KÝ KẾT HỢP TÁC", "THỰC HÀNH"], open: false },
+      { time: "16:00–16:30", title: "Phiên bế mạc & Trao giải Chuyển đổi số Xuất sắc 2026", meta: "Hội trường lớn", body: "Tổng kết hội thảo và trao giải thưởng Cơ quan Chuyển đổi số Xuất sắc 2026 cho 10 đơn vị tiêu biểu. Bộ trưởng phát biểu bế mạc.", tags: ["BẾ MẠC", "TRAO GIẢI"], open: false },
+      { time: "18:30–21:00", title: "Tiệc chiêu đãi buổi tối — Trân trọng kính mời", meta: "Nhà hàng Sofitel", body: "Tiệc chiêu đãi chính thức do Bộ TT&TT tổ chức tại Nhà hàng Sofitel Legend Metropole Hà Nội. Biểu diễn văn nghệ đặc sắc. Trang phục: Lịch sự.", tags: [], open: false }
+    ]
+  },
+
+  /* ── Cam kết Ban tổ chức (Phần 6) ──────────────────────────── */
+  commitment: {
+    num: 6, light: true,
+    title: "Ban tổ chức cam kết với đại biểu",
+    label: "Quyền lợi và cam kết chất lượng",
+    items: [
+      "<strong>Nội dung thực chất, có thể áp dụng ngay</strong> — mỗi phiên thảo luận kết thúc bằng checklist hành động cụ thể cho cơ quan của Quý Anh/Chị",
+      "<strong>Diễn giả cấp cao, kinh nghiệm thực tiễn</strong> — 100% diễn giả đã trực tiếp triển khai AI tại cơ quan nhà nước, không chỉ lý thuyết",
+      "<strong>Kết nối và cơ hội hợp tác</strong> — nền tảng gặp gỡ 500+ lãnh đạo và chuyên gia cùng lĩnh vực từ 63 tỉnh thành",
+      "<strong>Tài liệu và kỷ yếu đầy đủ</strong> — toàn bộ tài liệu hội thảo, báo cáo khảo sát và bộ công cụ triển khai AI được cung cấp miễn phí"
+    ]
+  },
+
+  /* ── Nút xác nhận ───────────────────────────────────────────── */
+  cta: {
+    title:   "Đăng ký tham dự Hội thảo AI-GOV 2026",
+    badge:   "HỘI THẢO QUỐC GIA · 22/5/2026 · HÀ NỘI",
+    desc:    "Số lượng đại biểu giới hạn — 500 chỗ ngồi.<br>Vui lòng đăng ký trước ngày <strong style='color:#F5C842'>15/5/2026</strong> để đảm bảo suất tham dự.",
+    btnText: "ĐĂNG KÝ THAM DỰ →",
+    btnLink: "#",   // ← thay bằng link đăng ký thực tế
+    info:    ["08:00 – 17:00 · Thứ Sáu 22/5/2026", "Trung tâm Hội nghị Quốc gia · Hà Nội"]
+  },
+
+  /* ── Chữ ký ─────────────────────────────────────────────────── */
+  signature: {
+    name:    "Nguyễn Huy Dũng",
+    role:    "Thứ trưởng Bộ Thông tin và Truyền thông",
+    contact: "mic.gov.vn · 024 3943 6684"
+  }
+
+} // ← Kết thúc DATA
+
+
+/* ================================================================
+   🔧  RENDER ENGINE — Không cần sửa phần bên dưới
+   ================================================================ */
+
+function renderHeader() {
+  const {org, event} = DATA;
+  return `<div class="hd">
+    <div class="seal-row">
+      <div class="seal"><div class="seal-inner"><div class="seal-star">★</div><div class="seal-text">CHÍNH PHỦ<br>VIỆT NAM</div></div></div>
+      <div>
+        <div class="logo-name">${org.name}</div>
+        <div class="logo-sub">${org.sub}</div>
+      </div>
+    </div>
+    <div class="date-tag">${event.dateTag}</div>
+    <h1 class="main-title">${event.mainTitle}</h1>
+    <div class="ev-banner">
+      <span class="ev-code">${event.eventCode}</span>
+      <div class="ev-divider"></div>
+      <span class="ev-desc">${event.eventTagline}</span>
+    </div>
+    <p class="hd-sub">${event.subtitle}</p>
+    <div class="info-grid">
+      <div class="info-item"><div class="info-icon">📅</div><div><div class="info-label">Ngày tổ chức</div><div class="info-val">${event.meetingDate}</div></div></div>
+      <div class="info-item"><div class="info-icon">🕐</div><div><div class="info-label">Thời gian</div><div class="info-val">${event.time}</div></div></div>
+    </div>
+    <div class="info-item" style="margin-top:12px">
+      <div class="info-icon">📍</div>
+      <div><div class="info-label">Địa điểm</div><div class="info-val">${event.location}</div></div>
+    </div>
+  </div>`;
+}
+
+function renderLetter() {
+  const {letter} = DATA;
+  return `<div class="sec"><div class="letter-box"><p>${letter.greeting}</p>${letter.paragraphs.map(p=>`<p>${p}</p>`).join('')}</div></div>`;
+}
+
+function renderNetwork() {
+  const {network} = DATA;
+  const tiers = network.tiers.map(t=>`
+    <div class="obj-card">
+      <div class="obj-num">${t.label}</div>
+      <div class="obj-title">${t.name}</div>
+      <div class="obj-desc">${t.desc}</div>
+    </div>`).join('');
+  return `<div class="sec sec-light">
+    <div class="hl-box">
+      <div class="hl-box-hd"><span class="hl-box-badge">${network.code}</span><span class="hl-box-title">${network.title}</span></div>
+      <div class="hl-box-body">
+        <p class="hl-box-desc">${network.desc}</p>
+        <div class="obj-grid">${tiers}</div>
+        <div class="hl-box-note">${network.note}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderBlock(b) {
+  if (b.type==='p') return `<p class="bp">${b.text}</p>`;
+  if (b.type==='strategy') {
+    const cells = b.cells.map(c=>`<div class="strat-cell"><div class="sc-label">${c.label}</div><div class="sc-title">${c.title}</div><div class="sc-desc">${c.desc}</div></div>`).join('');
+    return `<div class="strat-box"><div class="strat-hd">${b.header}</div><div class="strat-grid">${cells}</div></div>`;
+  }
+  if (b.type==='policy') {
+    const cards = b.cards.map(c=>`<div class="policy-card"><div class="pc-label">${c.label}</div><div class="pc-title">${c.title}</div><div class="pc-desc">${c.desc}</div></div>`).join('');
+    return `<div class="policy-grid">${cards}</div>`;
+  }
+  if (b.type==='stats') {
+    const items = b.items.map(s=>`<div class="stat-card ${s.color}"><div class="stat-num">${s.num}</div><div class="stat-lbl">${s.label}</div><div class="stat-desc">${s.desc}</div></div>`).join('');
+    return `<div class="stats-row">${items}</div>`;
+  }
+  if (b.type==='criteria') {
+    const items = b.items.map((it,i)=>`<div class="crit-item"><div class="crit-num">${i+1}</div><div class="crit-text">${it}</div></div>`).join('');
+    return `<div class="crit-box"><div class="crit-sub">${b.subtitle}</div>${items}</div>`;
+  }
+  return '';
+}
+
+function renderSections() {
+  return DATA.sections.map(s=>`<div class="sec${s.light?' sec-light':''}">
+    <div class="num-hd"><div class="num-circle">${s.num}</div><div class="num-title">${s.title}</div></div>
+    ${s.blocks.map(renderBlock).join('')}
+  </div>`).join('');
+}
+
+function renderSchedule() {
+  const {schedule:s} = DATA;
+  const items = s.items.map(it=>{
+    const tags = it.tags.length ? `<div class="sched-tags">${it.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>` : '';
+    return `<div class="sched-item${it.open?' open':''}" onclick="toggleSched(this)">
+      <div class="sched-hd"><span class="sched-time">${it.time}</span><span class="sched-title">${it.title}</span><span class="sched-meta">${it.meta} <span class="sched-arrow">▼</span></span></div>
+      <div class="sched-body">${it.body}${tags}</div>
+    </div>`;
+  }).join('');
+  return `<div class="sec${s.light?' sec-light':''}">
+    <div class="num-hd"><div class="num-circle">${s.num}</div><div class="num-title">${s.title}</div></div>
+    <p class="bp">${s.intro}</p>${items}
+  </div>`;
+}
+
+function renderCommitment() {
+  const {commitment:c} = DATA;
+  const items = c.items.map(it=>`<div class="commit-item"><div class="commit-dot"></div><div>${it}</div></div>`).join('');
+  return `<div class="sec${c.light?' sec-light':''}">
+    <div class="num-hd"><div class="num-circle">${c.num}</div><div class="num-title">${c.title}</div></div>
+    <div class="commit-box"><div class="commit-label">${c.label}</div>${items}</div>
+  </div>`;
+}
+
+function renderCTA() {
+  const {cta} = DATA;
+  return `<div class="cta-sec">
+    <div class="cta-title">${cta.title}</div>
+    <div class="cta-badge">${cta.badge}</div>
+    <div class="cta-desc">${cta.desc}</div>
+    <a href="${cta.btnLink}" class="cta-btn">${cta.btnText}</a>
+    <div class="cta-info">${cta.info.map(i=>`<span>${i}</span>`).join('')}</div>
+  </div>`;
+}
+
+function renderSignature() {
+  const {signature:s} = DATA;
+  return `<div class="sig"><div class="sig-name">${s.name}</div><div class="sig-role">${s.role}</div><div class="sig-contact">${s.contact}</div></div>`;
+}
+
+document.getElementById('app').innerHTML =
+  renderHeader() + renderLetter() + renderNetwork() +
+  renderSections() + renderSchedule() + renderCommitment() +
+  renderCTA() + renderSignature() +
+  `<div class="footer">${DATA.org.address}</div>`;
+
+function toggleSched(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.sched-item').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
