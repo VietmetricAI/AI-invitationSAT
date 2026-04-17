@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thư Mời</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#EDE8E2;color:#2C2C2C;font-size:15px;line-height:1.7}
+    .wrap{max-width:680px;margin:32px auto;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.10);border-radius:4px;overflow:hidden}
+    .hd{padding:28px 40px 32px;background:#fff}
+    .logo-row{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+    .logo-box{width:36px;height:36px;background:#C8392B;color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;border-radius:5px}
+    .logo-name{font-weight:600;font-size:14px}
+    .date-tag{display:inline-block;background:#C8392B;color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:16px}
+    .main-title{font-size:30px;font-weight:800;line-height:1.25;color:#1A1A1A;margin-bottom:20px}
+    .ev-banner{background:#C8392B;color:#fff;padding:11px 20px;border-radius:6px;display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+    .ev-name{font-weight:800;font-size:14.5px;white-space:nowrap}
+    .ev-divider{width:1px;height:18px;background:rgba(255,255,255,.35);flex-shrink:0}
+    .ev-desc{font-size:13px;opacity:.88}
+    .hd-sub{font-size:13.5px;color:#666;margin-bottom:22px;line-height:1.65}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px}
+    .info-item{display:flex;align-items:flex-start;gap:10px}
+    .info-icon{width:30px;height:30px;background:#FFF0EE;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;margin-top:2px}
+    .info-label{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#AAA;margin-bottom:2px}
+    .info-val{font-size:13px;font-weight:600;line-height:1.4}
+    .sec{padding:30px 40px;border-top:1px solid #EDEAE5}
+    .sec-light{background:#FAF8F5}
+    .num-hd{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .num-circle{width:36px;height:36px;background:#C8392B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+    .num-title{font-size:15px;font-weight:800;color:#1A1A1A;text-transform:uppercase;letter-spacing:.5px}
+    .letter-box{border-left:3px solid #C9A44C;padding:20px 24px;background:#FFFDF8;border-radius:0 6px 6px 0}
+    .letter-box p{font-size:14px;line-height:1.8;color:#333;margin-bottom:14px}
+    .letter-box p:last-child{margin-bottom:0}
+    .avn-box{background:#FFFBF0;border:1.5px solid #DFC97A;border-radius:8px;overflow:hidden}
+    .avn-hd{background:#C9A44C;padding:11px 20px;display:flex;align-items:center;gap:12px}
+    .avn-badge{background:#fff;color:#A07C28;font-weight:800;font-size:11px;padding:3px 8px;border-radius:4px;letter-spacing:.5px}
+    .avn-hd-title{color:#fff;font-weight:700;font-size:14px}
+    .avn-body{padding:20px}
+    .avn-desc{font-size:13.5px;font-weight:600;color:#555;margin-bottom:16px}
+    .avn-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+    .tier-card{background:#FDE8E6;border-radius:6px;padding:14px 12px}
+    .tier-label{font-size:10px;font-weight:700;color:#C8392B;letter-spacing:.6px;text-transform:uppercase;margin-bottom:4px}
+    .tier-name{font-size:14px;font-weight:800;color:#1A1A1A;margin-bottom:8px}
+    .tier-desc{font-size:12px;color:#666;line-height:1.5}
+    .avn-note{border-left:3px solid #C9A44C;padding:10px 14px;font-size:13px;color:#555;background:#FFFCF0;border-radius:0 4px 4px 0;line-height:1.6}
+    .bp{font-size:13.5px;color:#444;line-height:1.75;margin-bottom:16px}
+    .bp:last-child{margin-bottom:0}
+    .hl{color:#1A1A1A;font-weight:700}
+    .strat-box{border:1.5px solid #C8392B;border-radius:8px;overflow:hidden;margin-bottom:16px}
+    .strat-hd{background:#C8392B;color:#fff;padding:10px 18px;font-size:12.5px;font-weight:700;letter-spacing:.5px}
+    .strat-grid{display:grid;grid-template-columns:1fr 1fr}
+    .strat-cell{padding:16px 18px;border-right:1px solid #F0EEEB;border-bottom:1px solid #F0EEEB}
+    .strat-cell:nth-child(even){border-right:none}
+    .strat-cell:nth-last-child(-n+2){border-bottom:none}
+    .sc-label{font-size:10.5px;font-weight:700;color:#C8392B;letter-spacing:.5px;margin-bottom:4px}
+    .sc-title{font-size:13px;font-weight:700;color:#2C2C2C;margin-bottom:6px}
+    .sc-desc{font-size:12px;color:#666;line-height:1.55}
+    .policy-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .policy-card{background:#F5F3F0;border-radius:8px;padding:15px}
+    .pc-label{font-size:10.5px;font-weight:700;color:#C8392B;margin-bottom:4px;letter-spacing:.5px}
+    .pc-title{font-size:13px;font-weight:700;color:#2C2C2C;margin-bottom:6px}
+    .pc-desc{font-size:12px;color:#666;line-height:1.5}
+    .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+    .stat-card{border-radius:8px;padding:16px;text-align:center}
+    .stat-card.red{background:#FDE8E6}.stat-card.gold{background:#FFF8E8}.stat-card.pink{background:#FDDCDA}
+    .stat-num{font-size:26px;font-weight:800;line-height:1;margin-bottom:4px}
+    .stat-card.red .stat-num,.stat-card.pink .stat-num{color:#C8392B}
+    .stat-card.gold .stat-num{color:#B8862A}
+    .stat-lbl{font-size:10.5px;font-weight:700;color:#999;letter-spacing:.5px;margin-bottom:6px}
+    .stat-desc{font-size:11.5px;color:#666;line-height:1.45}
+    .crit-box{background:#F8F6F2;border-radius:8px;padding:18px 20px}
+    .crit-sub{font-size:11px;font-weight:700;color:#C8392B;letter-spacing:.7px;text-transform:uppercase;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #E5E0D8}
+    .crit-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+    .crit-item:last-child{margin-bottom:0}
+    .crit-num{width:26px;height:26px;background:#C8392B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0;margin-top:1px}
+    .crit-text{font-size:13.5px;color:#333;line-height:1.65}
+    .sched-item{border:1px solid #E5E0D8;border-radius:8px;margin-bottom:8px;overflow:hidden;cursor:pointer;transition:box-shadow .15s}
+    .sched-item:hover{box-shadow:0 2px 8px rgba(200,57,43,.10)}
+    .sched-item.open{border-color:#C8392B}
+    .sched-hd{display:flex;align-items:center;padding:13px 18px;gap:14px;background:#fff;user-select:none}
+    .sched-item.open .sched-hd{background:#FFF8F7}
+    .sched-time{font-size:12.5px;font-weight:700;color:#C8392B;white-space:nowrap;min-width:90px}
+    .sched-title{font-size:13.5px;font-weight:600;color:#2C2C2C;flex:1}
+    .sched-meta{font-size:12px;color:#999;white-space:nowrap;display:flex;align-items:center;gap:6px}
+    .sched-arrow{font-size:11px;color:#C8392B;display:inline-block;transition:transform .25s ease}
+    .sched-item.open .sched-arrow{transform:rotate(180deg)}
+    .sched-body{display:none;padding:14px 18px 16px;border-top:1px solid #F0EDE8;font-size:13.5px;color:#555;line-height:1.7;background:#FFFDF9;animation:fadeDown .2s ease}
+    @keyframes fadeDown{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+    .sched-item.open .sched-body{display:block}
+    .sched-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+    .tag{background:#EDEAE5;color:#666;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:.3px}
+    .commit-box{border:1px solid #E5E0D8;border-radius:8px;padding:20px 24px;background:#fff}
+    .commit-label{font-size:11px;font-weight:700;color:#C8392B;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+    .commit-item{display:flex;gap:12px;margin-bottom:13px;font-size:13.5px;color:#333;line-height:1.65}
+    .commit-item:last-child{margin-bottom:0}
+    .commit-dot{width:8px;height:8px;background:#C8392B;border-radius:50%;flex-shrink:0;margin-top:7px}
+    .cta-sec{background:#C8392B;padding:44px 40px;text-align:center}
+    .cta-title{color:#fff;font-size:22px;font-weight:800;margin-bottom:8px;line-height:1.3}
+    .cta-badge{color:#F5C842;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:18px}
+    .cta-desc{color:rgba(255,255,255,.84);font-size:14px;margin-bottom:28px;line-height:1.65}
+    .cta-btn{display:inline-block;background:#C9A44C;color:#fff;font-weight:800;font-size:13.5px;letter-spacing:1.5px;text-transform:uppercase;padding:16px 50px;border-radius:6px;text-decoration:none;cursor:pointer;border:none;font-family:inherit;transition:background .2s,transform .1s}
+    .cta-btn:hover{background:#B8933D;transform:translateY(-1px)}
+    .cta-info{color:rgba(255,255,255,.6);font-size:12px;margin-top:22px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+    .sig{padding:28px 40px;background:#fff;border-top:1px solid #EDEAE5}
+    .sig-name{font-size:20px;font-weight:800;color:#C8392B;margin-bottom:4px}
+    .sig-role{font-size:13.5px;color:#555;margin-bottom:3px}
+    .sig-contact{font-size:13px;color:#999}
+    .footer{background:#F5F2ED;border-top:1px solid #E5E0D8;padding:14px 40px;text-align:center;font-size:11px;color:#AAA;letter-spacing:.6px;text-transform:uppercase}
+    @media(max-width:620px){
+      .wrap{margin:0;border-radius:0}
+      .hd,.sec,.sig,.cta-sec,.footer{padding-left:20px;padding-right:20px}
+      .info-grid,.avn-tiers,.strat-grid,.policy-grid,.stats-row{grid-template-columns:1fr}
+      .cta-info{flex-direction:column;gap:6px}
+      .main-title{font-size:24px}
+      .sched-meta{display:none}
+      .ev-divider{display:none}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+/* ================================================================
+   ✏️  TÙY CHỈNH NỘI DUNG — Chỉ cần sửa phần DATA bên dưới
+   Không cần chạm vào phần còn lại của file.
+   ================================================================ */
+
+const DATA = {
+
+  /* ── Thông tin tổ chức ──────────────────────────────────────── */
+  org: {
+    logo:    "XL",                  // chữ trong ô vuông đỏ
+    name:    "XLeader Academy",     // tên tổ chức
+    website: "xleader.vn",
+    phone:   "0917 235 555",
+    address: "Tòa T11, Tầng 04, Phòng 18 · Vinhomes Times City · 458 Minh Khai · Hà Nội · xleader.vn"
+  },
+
+  /* ── Thông tin sự kiện ──────────────────────────────────────── */
+  event: {
+    dateTag:     "Thứ Năm · Tháng 4/2026",
+    mainTitle:   "Kính mời Anh/Chị tham gia sáng lập và dẫn dắt",
+    eventName:   "AI Vanguard Network",
+    eventTagline:"Mạng lưới Tiên phong AI · Kiến tạo bởi XLeader Academy",
+    subtitle:    "Kính gửi Anh/Chị — những chuyên gia đang đi đầu trong nghiên cứu và thực hành ứng dụng AI vào vận hành doanh nghiệp",
+    meetingDate: "Thứ Tư, 16/4/2026",
+    time:        "09:00 – 12:00 · Dùng bữa trưa kết nối sau",
+    location:    "XLeader Office · T11-04-18 · Vinhomes Times City · Hà Nội"
+  },
+
+  /* ── Thư mời ────────────────────────────────────────────────── */
+  letter: {
+    greeting:   "Kính gửi Anh/Chị,",
+    paragraphs: [
+      "XLeader đang trần trở với một bài toán lớn: làm thế nào để CEO SME Việt Nam — lực lượng xương sống của kinh tế tư nhân — có thể nhìn thấy rõ AI đang đi đến đâu, hiểu được nó thực sự làm được gì cho doanh nghiệp, và biết cần chuẩn bị gì từ hôm nay.",
+      "Bài toán đó cần những người như Anh/Chị — vừa nghiên cứu, vừa thực hành, vừa hiểu doanh nghiệp từ bên trong. XLeader trân trọng kính mời Anh/Chị tham gia xây dựng <strong>AI Vanguard Network</strong> — Mạng lưới Tiên phong AI — do Anh/Chị dẫn dắt, phụng sự cộng đồng CEO SME Việt Nam."
+    ]
+  },
+
+  /* ── Hộp giới thiệu mạng lưới ──────────────────────────────── */
+  network: {
+    code:  "AVN",
+    title: "AI Vanguard Network — Mạng lưới Tiên phong AI",
+    desc:  "Nhóm chuyên gia tiên phong nghiên cứu & thực hành AI — dẫn dắt và trung chuyển tri thức đến cộng đồng CEO SME Việt Nam",
+    tiers: [
+      { label: "Tầng 1 · AVN",       name: "Tiên phong",       desc: "Chuyên gia nghiên cứu & thực hành AI — vận hành AI Lab, thử nghiệm thực chiến, đúc kết bài học ứng dụng" },
+      { label: "Tầng 2 · AVN",       name: "Cầu nối",          desc: "Chuyển hóa tri thức từ Lab thành nội dung thực dụng — thông qua forum, sự kiện, workshop, seminar, chương trình học tập" },
+      { label: "Tầng 3 · Cộng đồng", name: "CEO SME Việt Nam", desc: "Tiếp nhận, ứng dụng và chuyển hóa AI vào vận hành doanh nghiệp — tạo ra tác động kinh tế thực" }
+    ],
+    note: "<strong>AVN không phải hội đồng hình thức.</strong> Đây là mạng lưới hoạt động liên tục — nơi những người đi đầu về AI cùng nhau tạo hệ sinh thái tri thức và lan tỏa đến hàng nghìn CEO SME Việt Nam đang định hướng trong kỷ nguyên AI."
+  },
+
+  /* ── Các phần nội dung ──────────────────────────────────────── */
+  sections: [
+    {
+      num: 1, light: false,
+      title: "Bối cảnh chiến lược quốc gia",
+      blocks: [
+        { type: "p", text: "Việt Nam đặt mục tiêu tăng trưởng GDP trên 10%/năm giai đoạn 2026–2030. Công thức tăng trưởng mới không thể tiếp tục dựa vào lao động giá rẻ hay tài nguyên — mà dựa vào 4 trụ cột chiến lược:" },
+        {
+          type: "strategy",
+          header: "Chiến lược quốc gia 2026–2030 · Mục tiêu GDP >10%/năm",
+          cells: [
+            { label: "NQ66 · Trụ cột 1", title: "Thể chế minh bạch",            desc: "Hoàn thiện pháp luật, cải cách thủ tục — tạo môi trường kinh doanh công bằng, là bệ đỡ cho 3 trụ cột còn lại vận hành" },
+            { label: "NQ68 · Trụ cột 2", title: "Kinh tế tư nhân làm nòng cốt", desc: "Doanh nghiệp tư nhân là động lực tăng trưởng quốc gia — CEO SME là người thực thi trực tiếp chiến lược này" },
+            { label: "Trụ cột 3",        title: "Đột phá công nghệ",             desc: "AI, đổi mới sáng tạo và chuyển đổi số là động lực chính — không còn là lựa chọn tùy ý" },
+            { label: "Trụ cột 4",        title: "Hội nhập chuẩn quốc tế",        desc: "Tiêu chuẩn vận hành doanh nghiệp ngang tầm khu vực — quản trị, minh bạch, ESG" }
+          ]
+        },
+        { type: "p", text: "Trụ cột 2 và Trụ cột 3 giao nhau tại một yêu cầu: <span class=\"hl\">CEO SME Việt Nam cần đủ năng lực tích hợp AI vào vận hành doanh nghiệp</span> — đây là điều kiện cần để duy trì năng lực cạnh tranh trong nền kinh tế mới. AVN được kiến tạo để rút ngắn hành trình đó." }
+      ]
+    },
+    {
+      num: 2, light: true,
+      title: "Hệ thống chính sách đang vận hành đồng bộ",
+      blocks: [
+        { type: "p", text: "Nhà nước đang kích hoạt đồng thời nhiều nghị quyết — tạo ra hệ sinh thái chính sách thuận lợi chưa từng có cho kinh tế tư nhân và chuyển đổi số:" },
+        {
+          type: "policy",
+          cards: [
+            { label: "NQ 57·NQ/TW",      title: "Khoa học công nghệ & Đổi mới sáng tạo",    desc: "Đột phá KH-CN là ưu tiên quốc gia hàng đầu. AI được xác định là lực lượng sản xuất mới." },
+            { label: "NQ 66·NQ/TW",      title: "Đổi mới công tác xây dựng pháp luật",      desc: "Tháo gỡ điểm nghẽn thể chế — tạo không gian pháp lý để doanh nghiệp tư nhân vận hành hiệu quả hơn." },
+            { label: "NQ 68·NQ/TW",      title: "Kinh tế tư nhân là động lực tăng trưởng",  desc: "Kinh tế tư nhân lần đầu tiên được ghi nhận ở cấp chiến lược quốc gia." },
+            { label: "QĐ 525 · BỘ KHDT", title: "Khung năng lực CEO quốc gia",              desc: "18 nội dung đào tạo lãnh đạo doanh nghiệp — AI & chuyển đổi số là trọng tâm giai đoạn 2026–2030." }
+          ]
+        }
+      ]
+    },
+    {
+      num: 3, light: false,
+      title: "XLeader trong bức tranh đó — và vì sao cần AVN",
+      blocks: [
+        { type: "p", text: "XLeader Academy đồng hành với CEO SME từ 2022 — ~1.500 lượt CEO/năm, 41 khóa học/năm. Đối chiếu hệ thống curriculum hiện tại với 18 nội dung QĐ 525:" },
+        {
+          type: "stats",
+          items: [
+            { num: "6/18", label: "Cover — 33%",   color: "red",  desc: "Thế mạnh lớn: chiến lược, mô hình kinh doanh, lãnh đạo, nhân sự, tài chính CEO" },
+            { num: "7/18", label: "Partial — 39%", color: "gold", desc: "Có nền, cần nâng cấp: quản trị dữ liệu, rủi ro, AI có trách nhiệm…" },
+            { num: "2/18", label: "Gap — 11%",     color: "pink", desc: "Cần xây mới: AI ứng dụng chuyên sâu & Chuyển đổi số sâu cho CEO" }
+          ]
+        },
+        { type: "p", text: "Hai nội dung còn trống nhất — <span class=\"hl\">AI ứng dụng trong vận hành doanh nghiệp và chuyển đổi số chuyên sâu cho CEO</span> — chính là thế mạnh thực hành của Anh/Chị. AVN được kiến tạo để lấp đầy những khoảng trống này — không chỉ cho một sự kiện, mà cho hành trình dài hạn cùng cộng đồng CEO SME Việt Nam." }
+      ]
+    },
+    {
+      num: 4, light: true,
+      title: "Tiêu chí thành viên AVN",
+      blocks: [
+        {
+          type: "criteria",
+          subtitle: "Buổi gặp khởi động · Chuyên gia nghiên cứu & thực hành ứng dụng AI trong vận hành doanh nghiệp",
+          items: [
+            "<strong>Đang thực hành ứng dụng AI trong vận hành doanh nghiệp</strong> — có kết quả đo được, kinh nghiệm triển khai thực tế và bài học thực chiến",
+            "<strong>Có kinh nghiệm xây dựng và dẫn dắt cộng đồng</strong> — hiểu cơ chế tạo ra ảnh hưởng và lan tỏa tri thức trong một tập thể",
+            "<strong>Là CEO SME</strong> — am hiểu bài toán quản trị từ góc độ người trực tiếp ra quyết định và chịu trách nhiệm về kết quả kinh doanh",
+            "<strong>Mang tư tưởng Kiến tạo — Phụng sự — Đóng góp cho cộng đồng doanh nghiệp Việt Nam</strong> — xác định việc chia sẻ thực nghiệm là trách nhiệm của người đi trước với cộng đồng"
+          ]
+        }
+      ]
+    }
+  ],
+
+  /* ── Lịch trình (Phần 5) ────────────────────────────────────── */
+  schedule: {
+    num: 5, light: false,
+    title: "Nội dung buổi họp khởi động · Thứ tư 16/4",
+    intro: "Buổi làm việc 3 tiếng — mục tiêu đồng thiết kế AVN và chương trình AI TALK 25–26/4:",
+    items: [
+      { time: "09:00–09:20", title: "Căn chỉnh định hướng — AVN: tầm nhìn, mô hình và lộ trình", meta: "XLeader trình bày", body: "XLeader trình bày bức tranh toàn cảnh: bối cảnh NQ57/66/68, QĐ 525, vị trí CEO SME trong chiến lược quốc gia 2026–2030. Tầm nhìn AVN — mô hình vận hành 3 tầng, định hướng hoạt động và vai trò của từng thành viên trong mạng lưới.", tags: ["AVN · MÔ HÌNH 3 TẦNG", "NQ57 · NQ66 · NQ68", "QĐ 525"], open: false },
+      { time: "09:20–10:20", title: "Đồng thiết kế chương trình AI TALK 25–26/4", meta: "Thảo luận nhóm", body: "Sự kiện đầu tiên của AVN hướng đến 100 CEO SME, ecommerce dominant, 2 ngày liên mạch. XLeader trình bày bản đề xuất hành trình nội dung. Anh/Chị đánh giá, phản biện và bổ sung từ góc độ thực hành AI. Xác nhận: nội dung phù hợp, thời lượng hợp lý, CEO tiếp nhận được quyết định hành động — không chỉ nhận thức.", tags: ["100 CEO SME", "ECOMMERCE DOMINANT", "SỰ KIỆN KHỞI ĐỘNG AVN"], open: true },
+      { time: "10:20–10:50", title: "Phân công vai trò trong AVN và sự kiện 25–26/4", meta: "Phân công cụ thể", body: "Xác định vai trò cụ thể của từng thành viên trong cấu trúc AVN và trong sự kiện AI TALK 25–26/4.", tags: [], open: false },
+      { time: "10:50–11:30", title: "Lộ trình vận hành AVN sau 26/4", meta: "Định hướng dài hạn", body: "Bàn thảo lộ trình hoạt động của AVN sau sự kiện khởi động: cơ chế vận hành, tần suất sinh hoạt và các cột mốc quan trọng trong năm 2026.", tags: [], open: false },
+      { time: "11:30–12:00", title: "Chốt kế hoạch hành động và phân công triển khai", meta: "Kết luận buổi họp", body: "Tổng kết buổi làm việc, chốt các quyết định chính, phân công cụ thể và xác nhận bước tiếp theo của từng thành viên.", tags: [], open: false },
+      { time: "12:00 trở đi", title: "Bữa trưa kết nối — XLeader trân trọng mời Anh/Chị", meta: "Tại XLeader Office", body: "Bữa trưa thân mật tại XLeader Office — cơ hội kết nối và trao đổi tự do giữa các thành viên AVN.", tags: [], open: false }
+    ]
+  },
+
+  /* ── Cam kết (Phần 6) ───────────────────────────────────────── */
+  commitment: {
+    num: 6, light: true,
+    title: "XLeader cam kết với các thành viên AVN",
+    label: "Trong buổi làm việc này và hành trình tiếp theo",
+    items: [
+      "<strong>Đồng thiết kế thực chất</strong> — ý kiến của Anh/Chị trực tiếp định hình cấu trúc AVN và nội dung các chương trình, không phải hình thức tham vấn",
+      "<strong>Tôn trọng thời gian</strong> — mỗi phần trong buổi làm việc có mục tiêu và kết quả đầu ra xác định trước",
+      "<strong>Đồng hành dài hạn</strong> — XLeader mang hệ sinh thái và cộng đồng CEO SME để thế mạnh thực hành AI của Anh/Chị được lan tỏa đúng đối tượng và tạo ra tác động thực",
+      "<strong>Minh bạch về vai trò và đóng góp</strong> — XLeader học hỏi từ Anh/Chị về thực hành AI; Anh/Chị tiếp cận hệ sinh thái và cộng đồng CEO SME của XLeader để nhân rộng ảnh hưởng"
+    ]
+  },
+
+  /* ── Nút xác nhận ───────────────────────────────────────────── */
+  cta: {
+    title:   "Xác nhận tham dự buổi họp khởi động AVN",
+    badge:   "AI VANGUARD NETWORK · 16/4/2026",
+    desc:    "XLeader Academy trân trọng chờ đón Anh/Chị.<br>Vui lòng xác nhận để XLeader chuẩn bị chu đáo cho buổi làm việc.",
+    btnText: "XÁC NHẬN THAM DỰ →",
+    btnLink: "#",   // ← thay bằng link Google Form hoặc Tally
+    info:    ["09:00 – 12:00 · Thứ Tư 16/4/2026", "XLeader Office · Vinhomes Times City · Hà Nội"]
+  },
+
+  /* ── Chữ ký ─────────────────────────────────────────────────── */
+  signature: {
+    name:    "Phạm Thu Thủy",
+    role:    "CEO & Founder — XLeader Academy",
+    contact: "xleader.vn · 0917 235 555"
+  }
+
+} // ← Kết thúc DATA
+
+
+/* ================================================================
+   🔧  RENDER ENGINE — Không cần sửa phần bên dưới
+   ================================================================ */
+
+function renderHeader() {
+  const {org,event} = DATA;
+  return `<div class="hd">
+    <div class="logo-row"><div class="logo-box">${org.logo}</div><span class="logo-name">${org.name}</span></div>
+    <div class="date-tag">${event.dateTag}</div>
+    <h1 class="main-title">${event.mainTitle}</h1>
+    <div class="ev-banner"><span class="ev-name">${event.eventName}</span><div class="ev-divider"></div><span class="ev-desc">${event.eventTagline}</span></div>
+    <p class="hd-sub">${event.subtitle}</p>
+    <div class="info-grid">
+      <div class="info-item"><div class="info-icon">📅</div><div><div class="info-label">Buổi họp khởi động</div><div class="info-val">${event.meetingDate}</div></div></div>
+      <div class="info-item"><div class="info-icon">🕐</div><div><div class="info-label">Thời gian</div><div class="info-val">${event.time}</div></div></div>
+    </div>
+    <div class="info-item" style="margin-top:12px"><div class="info-icon">📍</div><div><div class="info-label">Địa điểm</div><div class="info-val">${event.location}</div></div></div>
+  </div>`;
+}
+
+function renderLetter() {
+  const {letter} = DATA;
+  return `<div class="sec"><div class="letter-box"><p>${letter.greeting}</p>${letter.paragraphs.map(p=>`<p>${p}</p>`).join('')}</div></div>`;
+}
+
+function renderNetwork() {
+  const {network} = DATA;
+  const tiers = network.tiers.map(t=>`<div class="tier-card"><div class="tier-label">${t.label}</div><div class="tier-name">${t.name}</div><div class="tier-desc">${t.desc}</div></div>`).join('');
+  return `<div class="sec sec-light"><div class="avn-box">
+    <div class="avn-hd"><span class="avn-badge">${network.code}</span><span class="avn-hd-title">${network.title}</span></div>
+    <div class="avn-body"><p class="avn-desc">${network.desc}</p><div class="avn-tiers">${tiers}</div><div class="avn-note">${network.note}</div></div>
+  </div></div>`;
+}
+
+function renderBlock(b) {
+  if (b.type==='p') return `<p class="bp">${b.text}</p>`;
+  if (b.type==='strategy') {
+    const cells = b.cells.map(c=>`<div class="strat-cell"><div class="sc-label">${c.label}</div><div class="sc-title">${c.title}</div><div class="sc-desc">${c.desc}</div></div>`).join('');
+    return `<div class="strat-box"><div class="strat-hd">${b.header}</div><div class="strat-grid">${cells}</div></div>`;
+  }
+  if (b.type==='policy') {
+    const cards = b.cards.map(c=>`<div class="policy-card"><div class="pc-label">${c.label}</div><div class="pc-title">${c.title}</div><div class="pc-desc">${c.desc}</div></div>`).join('');
+    return `<div class="policy-grid">${cards}</div>`;
+  }
+  if (b.type==='stats') {
+    const items = b.items.map(s=>`<div class="stat-card ${s.color}"><div class="stat-num">${s.num}</div><div class="stat-lbl">${s.label}</div><div class="stat-desc">${s.desc}</div></div>`).join('');
+    return `<div class="stats-row">${items}</div>`;
+  }
+  if (b.type==='criteria') {
+    const items = b.items.map((it,i)=>`<div class="crit-item"><div class="crit-num">${i+1}</div><div class="crit-text">${it}</div></div>`).join('');
+    return `<div class="crit-box"><div class="crit-sub">${b.subtitle}</div>${items}</div>`;
+  }
+  return '';
+}
+
+function renderSections() {
+  return DATA.sections.map(s=>`<div class="sec${s.light?' sec-light':''}">
+    <div class="num-hd"><div class="num-circle">${s.num}</div><div class="num-title">${s.title}</div></div>
+    ${s.blocks.map(renderBlock).join('')}
+  </div>`).join('');
+}
+
+function renderSchedule() {
+  const {schedule:s} = DATA;
+  const items = s.items.map(it=>{
+    const tags = it.tags.length ? `<div class="sched-tags">${it.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>` : '';
+    return `<div class="sched-item${it.open?' open':''}" onclick="toggleSched(this)">
+      <div class="sched-hd"><span class="sched-time">${it.time}</span><span class="sched-title">${it.title}</span><span class="sched-meta">${it.meta} <span class="sched-arrow">▼</span></span></div>
+      <div class="sched-body">${it.body}${tags}</div>
+    </div>`;
+  }).join('');
+  return `<div class="sec${s.light?' sec-light':''}">
+    <div class="num-hd"><div class="num-circle">${s.num}</div><div class="num-title">${s.title}</div></div>
+    <p class="bp">${s.intro}</p>${items}
+  </div>`;
+}
+
+function renderCommitment() {
+  const {commitment:c} = DATA;
+  const items = c.items.map(it=>`<div class="commit-item"><div class="commit-dot"></div><div>${it}</div></div>`).join('');
+  return `<div class="sec${c.light?' sec-light':''}">
+    <div class="num-hd"><div class="num-circle">${c.num}</div><div class="num-title">${c.title}</div></div>
+    <div class="commit-box"><div class="commit-label">${c.label}</div>${items}</div>
+  </div>`;
+}
+
+function renderCTA() {
+  const {cta} = DATA;
+  return `<div class="cta-sec">
+    <div class="cta-title">${cta.title}</div>
+    <div class="cta-badge">${cta.badge}</div>
+    <div class="cta-desc">${cta.desc}</div>
+    <a href="${cta.btnLink}" class="cta-btn">${cta.btnText}</a>
+    <div class="cta-info">${cta.info.map(i=>`<span>${i}</span>`).join('')}</div>
+  </div>`;
+}
+
+function renderSignature() {
+  const {signature:s,org} = DATA;
+  return `<div class="sig"><div class="sig-name">${s.name}</div><div class="sig-role">${s.role}</div><div class="sig-contact">${s.contact}</div></div>`;
+}
+
+document.getElementById('app').innerHTML =
+  renderHeader() + renderLetter() + renderNetwork() +
+  renderSections() + renderSchedule() + renderCommitment() +
+  renderCTA() + renderSignature() +
+  `<div class="footer">${DATA.org.address}</div>`;
+
+function toggleSched(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.sched-item').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
